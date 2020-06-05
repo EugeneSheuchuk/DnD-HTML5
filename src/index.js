@@ -1,3 +1,8 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './app/App';
+import './style.css';
+
 let dragSrcEl = null;
 
 const cols = document.querySelectorAll('#columns .column');
@@ -67,3 +72,5 @@ function handleDragEnd(e) {
 		col.style.opacity = '1';
 	});
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
