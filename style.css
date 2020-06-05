@@ -1,4 +1,9 @@
 /* Prevent the text contents of draggable elements from being selectable. */
+#columns {
+    width: 1024px;
+    margin: 0 auto;
+    text-align: center;
+}
 
 [draggable] {
     -moz-user-select: none;
@@ -12,7 +17,7 @@
 .column {
     height: 150px;
     width: 150px;
-    float: left;
+    display: inline-block;
     border: 2px solid #666666;
     background-color: #ccc;
     margin-right: 5px;
