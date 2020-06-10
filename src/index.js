@@ -1,7 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app/App';
+import '@atlaskit/css-reset';
 import './style.css';
+
 
 let dragSrcEl = null;
 
