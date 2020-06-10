@@ -1,8 +1,13 @@
 .HTML {
-    display: inline-block;
-    flex-direction: row;
+    width: 1024px;
+    margin: 0 auto;
+    text-align: center;
 }
 
+h1 {
+    display: block;
+    width: 100%;
+}
 .todos {
     background: grey;
     height: 100px;
