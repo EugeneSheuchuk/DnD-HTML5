@@ -26,7 +26,6 @@ class BDnD extends React.Component {
 				destination.droppableId === source.droppableId &&
 				destination.index === source.index
 			) return;
-			console.log('destination ',destination, 'source ', source);
 			if (destination.droppableId !== source.droppableId) {
 				const prefColumn = this.state.columns[source.droppableId];
 				const newTaskIds = Array.from(prefColumn.taskIds);

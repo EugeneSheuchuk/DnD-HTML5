@@ -9,6 +9,7 @@ const Container = styled.div`
 	border-radius: 2px;
 	background-color: #a3c9ad;
 	min-height: 100px;
+	margin-bottom: 20px;
 `;
 const Title = styled.h3`
 	padding: 8px;
@@ -24,13 +25,13 @@ export default class Column extends React.Component {
 	render() {
 		return(
 			<Draggable draggableId={this.props.column.id} index={this.props.index}>
-				{(provided) => (
+				{(provided, snapshot) => (
 					<Container ref={provided.innerRef}
 							   {...provided.draggableProps}
 							   {...provided.dragHandleProps}
 					>
 						<Title>{this.props.column.title}</Title>
-						<Droppable droppableId={this.props.column.id}>
+						<Droppable droppableId={this.props.column.id} type="TASK">
 							{(provided, snapshot) => (
 								<TaskList
 									ref={provided.innerRef}
