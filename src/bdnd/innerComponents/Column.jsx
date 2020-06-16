@@ -8,13 +8,16 @@ const Container = styled.div`
 	border: 3px solid lightgray;
 	border-radius: 2px;
 	background-color: #a3c9ad;
+	min-height: 100px;
 `;
 const Title = styled.h3`
 	padding: 8px;
 `;
 const TaskList = styled.div`
 	padding: 8px;
-	background-color: ${props => props.isDraggingOver ? 'skyblue' : 'white'}
+	min-height: 50px;
+	background-color: ${props => props.isDraggingOver ? 'red' : 'white'}
+	
 `;
 
 export default class Column extends React.Component {
