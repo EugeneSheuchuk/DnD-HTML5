@@ -13,7 +13,25 @@ class BDnD extends React.Component {
 			destination.droppableId === source.droppableId &&
 			destination.index === source.index
 		) return;
-
+		console.log('destination ',destination, 'source ', source);
+		if (destination.droppableId !== source.droppableId) {
+			const prefColumn = this.state.columns[source.droppableId];
+			const newTaskIds = Array.from(prefColumn.taskIds);
+			newTaskIds.splice(source.index, 1);
+			prefColumn.taskIds = newTaskIds;
+			const newColumn = this.state.columns[destination.droppableId];
+			const taskIds = Array.from(newColumn.taskIds);
+			taskIds.splice(destination.index, 0, draggableId);
+			newColumn.taskIds = taskIds;
+			this.setState({clumns:
+					{
+						...this.state.columns,
+						[source.droppableId]: {...prefColumn},
+						[destination.droppableId]: {...newColumn},
+					},
+			} );
+			return;
+		}
 		const column = this.state.columns[destination.droppableId];
 		const newTaskIds = Array.from(column.taskIds);
 		newTaskIds.splice(source.index, 1);
